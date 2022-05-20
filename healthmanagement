@@ -1,0 +1,87 @@
+# health management system
+#3 client - panji , sharanv , mayur
+
+import datetime
+def gettime():
+    return datetime.datetime.now()
+def take(k):
+    if k==1:
+        c=int(input("Enter 1 for exercise and 2 for food"))
+        if(c==1):
+            value=input("type here\n")
+            with open("Panji-ex.txt","a") as op:
+                op.write(str([str(gettime())])+": "+value+"\n")
+            print("Successfully written")
+        elif(c==2):
+            value = input("type here\n")
+            with open("Panji-food.txt", "a") as op:
+                op.write(str([str(gettime())]) + ": " + value + "\n")
+            print("Successfully written")
+    elif(k==2):
+        c = int(input("Enter 1 for exercise and 2 for food"))
+        if (c == 1):
+            value = input("type here\n")
+            with open("Sharnav-ex.txt", "a") as op:
+                op.write(str([str(gettime())]) + ": " + value + "\n")
+            print("Successfully written")
+        elif (c == 2):
+            value = input("type here\n")
+            with open("Sharnav-food.txt", "a") as op:
+                op.write(str([str(gettime())]) + ": " + value + "\n")
+            print("Successfully written")
+    elif(k==3):
+        c = int(input("Enter 1 for exercise  and 2 for food"))
+        if (c == 1):
+            value = input("type here\n")
+            with open("Mayur-ex.txt", "a") as op:
+                op.write(str([str(gettime())]) + ": " + value + "\n")
+            print("Successfully written")
+        elif (c == 2):
+            value = input("type here\n")
+            with open("Mayur-food.txt", "a") as op:
+                op.write(str([str(gettime())]) + ": " + value + "\n")
+            print("Successfully written")
+    else:
+        print("Plz enter valid input (1(Panji),2(Sharnav),3(Mayur)")
+def retrieve(k):
+    if k==1:
+        c=int(input("Enter 1 for exercise   and 2 for food"))
+        if(c==1):
+            with open("Panji-ex.txt") as op:
+                for i in op:
+                    print(i,end="")
+        elif(c==2):
+            with open("Panji-food.txt") as op:
+                for i in op:
+                    print(i, end="")
+    elif(k==2):
+        c = int(input("Enter 1 for exercise and 2 for food"))
+        if (c == 1):
+            with open("Sharnav-ex.txt") as op:
+                for i in op:
+                    print(i, end="")
+        elif (c == 2):
+            with open("Sharnav-food.txt") as op:
+                for i in op:
+                    print(i, end="")
+    elif(k==3):
+        c = int(input("Enter 1 for exercise  and 2 for food"))
+        if (c == 1):
+            with open("Mayur-ex.txt") as op:
+                for i in op:
+                    print(i, end="")
+        elif (c == 2):
+            with open("Mayur-food.txt") as op:
+                for i in op:
+                    print(i, end="")
+    else:
+        print("Plz enter valid input (Panji,Sharnav,Mayur)")
+print("Health management system: ")
+a=int(input("Press 1 for log the value and 2 for retrieve "))
+
+if a==1:
+    b = int(input("Press 1 for Panji 2 for Sharnav 3 for Mayur "))
+    take(b)
+else:
+    b = int(input("Press 1 for Panji 2 for Sharnav 3 for Mayur "))
+    retrieve(b)
